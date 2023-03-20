@@ -9,7 +9,7 @@
 */
 
 //플레이어 정보 입력
-var players = [];
+var playersCandidate = [];
 var temp = prompt(`게임을 플레이할 인원을 입력하세요`);
 while (true) {
     if (isNaN(+temp)) {
@@ -18,22 +18,22 @@ while (true) {
         temp = +prompt(`게임을 플레이할 인원을 2명 이상 6명 이하로 입력하세요`);
     } else {
         alert(`총 플레이어는 ${temp}명입니다`);
-        players.length = +temp;
+        playersCandidate.length = +temp;
         break;
         
     }
 
 }
 
-for (var i = 0; i < players.length; i++) {
-    players[i] = prompt(`플레이어 이름을 등록합니다.\n${i+1}번 플레이어 이름 : `)
+for (var i = 0; i < playersCandidate.length; i++) {
+    playersCandidate[i] = prompt(`플레이어 이름을 등록합니다.\n${i+1}번 플레이어 이름 : `)
 }
-alert(`${players} 참가!`)
+alert(`${playersCandidate} 참가!`)
 
 //총 준비
 var shotGun = [0, 0, 0, 0, 0, 0];
 var numOfShot = +prompt(`실탄 개수`);
-while (numOfShot >= players.length) {
+while (numOfShot >= playersCandidate.length) {
     numOfShot = +prompt(`실탄 개수가 플레이어 수보다 많거나 같습니다.\n실탄 개수를 다시 입력해주세요.`);
 }
 var loaded = 0;
@@ -50,6 +50,11 @@ while (loaded < numOfShot) {
 //게임 시작
 var deathCount = 0;
 var shotGunIndex = 0;
+var firstPlayerIndex = Math.floor(Math.random()*playersCandidate.length);
+var players1 = playersCandidate.slice(firstPlayerIndex);
+var players2 = playersCandidate.slice(0, firstPlayerIndex);
+var players = players1.concat(players2);
+// alert(`${players}`)
 alert(`총을 받았습니다. ${players[0]}부터 시작합니다.`);
 while (numOfShot !== deathCount) {
     for (var i = 0; i < players.length; i++) {
