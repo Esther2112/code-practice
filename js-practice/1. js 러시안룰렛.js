@@ -12,7 +12,7 @@
 var players = [];
 var temp = prompt(`게임을 플레이할 인원을 입력하세요`);
 while (true) {
-    if (isNaN(temp)) {
+    if (isNaN(+temp)) {
         temp = prompt(`숫자가 아닙니다. 게임을 플레이할 인원을 숫자로 입력하세요`);
     } else if (+temp > 6 || +temp <= 1) {
         temp = +prompt(`게임을 플레이할 인원을 2명 이상 6명 이하로 입력하세요`);
@@ -22,19 +22,7 @@ while (true) {
         break;
         
     }
-    // players.length = +prompt(`게임을 플레이할 인원을 입력하세요`);
-    // if (!players.length) {
-    //     players.length = +prompt(`게임을 플레이할 인원을 2명 이상 입력하세요`);
-    // } else if (isNaN(players.length)) {
-    //     players.length = +prompt(`숫자가 아닙니다. 게임을 플레이할 인원을 숫자로 입력하세요`);
-    // } else if (players.length > 5) {
-    //     players.length = +prompt(`게임을 플레이할 인원을 6명 이하로 입력하세요`);
-    // } else {
-    //     alert(`총 플레이어는 ${players.length}명입니다`);
-    // }
-    // if(players.length > 0 && players.length <= 6) {
-    //     break;
-    // }
+
 }
 
 for (var i = 0; i < players.length; i++) {
@@ -50,7 +38,7 @@ while (numOfShot >= players.length) {
 }
 var loaded = 0;
 while (loaded < numOfShot) {
-    var index = Math.floor(Math.random() * 7);
+    var index = Math.floor(Math.random() * 6);
     if (shotGun[index] === 0) {
         shotGun[index] = 1;
         loaded++;
