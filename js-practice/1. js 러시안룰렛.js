@@ -47,7 +47,7 @@ while (loaded < numOfShot) {
     }
 }
 
-//게임 시작
+//첫번째 플레이이어 랜덤 지정
 var deathCount = 0;
 var shotGunIndex = 0;
 var firstPlayerIndex = Math.floor(Math.random()*playersCandidate.length);
@@ -55,6 +55,8 @@ var players1 = playersCandidate.slice(firstPlayerIndex);
 var players2 = playersCandidate.slice(0, firstPlayerIndex);
 var players = players1.concat(players2);
 // alert(`${players}`)
+
+//게임 시작
 alert(`총을 받았습니다. ${players[0]}부터 시작합니다.`);
 while (numOfShot !== deathCount) {
     for (var i = 0; i < players.length; i++) {
