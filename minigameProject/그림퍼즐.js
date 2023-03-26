@@ -44,30 +44,34 @@ function setMovePoint() {
     const $blank = document.querySelector('#blank');
     //blank 인덱스 찾기
     let movePoint = arrayOfPics.indexOf($blank);
-    console.log(movePoint);
+    // console.log(movePoint);
     //4칸, 1칸거리 그림들에게 movable 클래스 주기
     //blank가 가장자리에 있을때 예외사항 두기
     for (let i = 0; i < arrayOfPics.length; i++) {
+        if ((i - movePoint) === -1 &&
+            (i + 1) % 4 == 0) {
+            continue;
+        }
+        if ((i - movePoint) === 1 &&
+            i % 4 === 0) {
+            continue;
+        } 
         if (Math.abs(i - movePoint) === 4 ||
             Math.abs(i - movePoint) === 1) {
-            if ((i - movePoint) === -1 &&
-                $puzzle[i] === document.querySelector('.mixedImage:nth-child(4n + 4)')) {
-                continue;
-            } else if ((i - movePoint) === 1 &&
-                $puzzle[i] === document.querySelector('.mixedImage:nth-child(4n + 1)')) {
-                continue;
-            } else {
-                $puzzle[i].classList.add('movable');
-            }
+            
+            $puzzle[i].classList.add('movable');
+            
         }
     }
+    console.log(document.querySelectorAll('.movable'));
 }
-setMovePoint();
+// setMovePoint();
 const $picture = document.querySelector('.puzzle');
 //movable 움직이기============================================================================
 // console.log($puzzle[15]);
 $picture.onclick = e => {
     const $blank = document.querySelector('#blank');
+    setMovePoint();
     if (e.target.matches('.puzzle .movable')) {
         //    e.target.style.background = 'red';
         $blank.style.background = e.target.style.background;
@@ -76,9 +80,8 @@ $picture.onclick = e => {
         let temp = e.target.id;
         e.target.id = $blank.id;
         $blank.id = temp;
-        console.log($blank);
+        // console.log($blank);
         [...$picture.children].forEach($pic => $pic.classList.remove('movable'));
-        setMovePoint();
         // return;
     }
 
