@@ -6,13 +6,20 @@
     css 개선
  */
 
-    const originImage = ['image/0.png', 'image/1.png', 'image/2.png', 'image/3.png',
-    'image/4.png', 'image/5.png',
-    'image/6.png', 'image/7.png',
-    'image/8.png', 'image/9.png',
-    'image/10.png', 'image/11.png',
-    'image/12.png', 'image/13.png',
-    'image/14.png', null
+const midLevel = document.querySelector('.midLevel');
+function setMidLevel () {
+    const midLevelGame = document.querySelector('.midLevelGame');
+    midLevelGame.style.display = 'block';
+}    
+midLevel.addEventListener('click', setMidLevel);
+
+const originImage = ['image/0.png', 'image/1.png', 'image/2.png', 'image/3.png',
+'image/4.png', 'image/5.png',
+'image/6.png', 'image/7.png',
+'image/8.png', 'image/9.png',
+'image/10.png', 'image/11.png',
+'image/12.png', 'image/13.png',
+'image/14.png', null
 ];
 
 function getImage() {
@@ -22,7 +29,7 @@ function getImage() {
     const copyOfOrigin = [...originImage];
     //빈배열
     const mixedImage = [];
-    const $picture = document.querySelector('.puzzle');
+    const $picture = document.querySelector('.midLevelGame');
     //이미지 섞어서 빈배열에 저장
     // function setImage() {
     orderedIndex = 0;
@@ -60,7 +67,7 @@ function getImage() {
 
 //클릭가능 버튼 지정하기==========================================================
 function setMovePoint() {
-    const $puzzle = document.querySelector('.puzzle').children;
+    const $puzzle = document.querySelector('.midLevelGame').children;
     const arrayOfPics = [...$puzzle];
     //배열 사본 생성
     const $blank = document.querySelector('#blank');
@@ -90,7 +97,7 @@ function setMovePoint() {
 
 
 function endOfGame() {
-    const $puzzle = document.querySelector('.puzzle').children;
+    const $puzzle = document.querySelector('.midLevelGame').children;
     const arrayOfPics = [...$puzzle];
     for (let i = 0; i < arrayOfPics.length - 1; i++) {
         if (arrayOfPics[i].style.background === `url("${originImage[i]}")`) {
@@ -107,7 +114,7 @@ function endOfGame() {
 
 //movable 움직이기=========================================================================
 function movePuzzle(e) {
-    const $picture = document.querySelector('.puzzle');
+    const $picture = document.querySelector('.midLevelGame');
     const $blank = document.querySelector('#blank');
     setMovePoint();
     if (e.target.matches('.puzzle .movable')) {
@@ -126,7 +133,7 @@ function movePuzzle(e) {
 
 function playPuzzleGame() {
     getImage();
-    const $picture = document.querySelector('.puzzle');
+    const $picture = document.querySelector('.midLevelGame');
     $picture.addEventListener('click', movePuzzle);
     
 }

@@ -33,6 +33,7 @@ section.wrapper .setLevel .level {
     justify-content: center;
     align-items: center;
     color: #ffffff;
+    cursor: pointer;
 }
 section.wrapper .setLevel .lowLevel {
     background: #efde4c;
@@ -48,16 +49,27 @@ section.wrapper .puzzle {
     height: 800px;
     /* border: 1px solid #c20000; */
 }
-section.wrapper .midLevel .mixedImage {
+section.wrapper .lowLevelGame{
+    display: none;
+    background-color: black;
+}
+section.wrapper .midLevelGame{
+    display: none;
+}
+section.wrapper .highLevelGame{
+    display: none;
+    background-color: black;
+}
+section.wrapper .midLevelGame .mixedImage {
     width: 25%;
     height: 25%;
     float: left;
 }
-section.wrapper .midLevel .mixedImage:nth-child(4n + 4)::after {
+section.wrapper .midLevelGame .mixedImage:nth-child(4n + 4)::after {
     content: '';
     display: block;
     clear: both;
 }
-section.wrapper .midLevel #blank {
+section.wrapper .midLevelGame #blank {
     background: #ffffff;
 }
