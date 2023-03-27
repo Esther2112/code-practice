@@ -46,12 +46,16 @@ function getImage() {
 
         const $setImage = document.createElement('div');
         $setImage.classList.add('mixedImage');
-        $setImage.id = `#index${orderedIndex}`;
+        $setImage.id = `index${orderedIndex}`;
         $setImage.style.background = `url(${mixedImage[orderedIndex]})`;
         $picture.appendChild($setImage);
 
         orderedIndex++;
     }
+        const $setImage = document.createElement('div');
+        $setImage.classList.add('mixedImage');
+        $setImage.id = `blank`;
+        $picture.appendChild($setImage);
 }
 
 //클릭가능 버튼 지정하기==========================================================
