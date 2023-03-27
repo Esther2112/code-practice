@@ -14,7 +14,34 @@ section.wrapper h1.title {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 150px;
+}
+section.wrapper .setLevel{
+    width: 800px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+section.wrapper .setLevel .level {
+    width: 200px;
+    padding: 10px 30px;
+    /* border: 1px solid #000; */
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+section.wrapper .setLevel .lowLevel {
+    background: #efde4c;
+}
+section.wrapper .setLevel .midLevel {
+    background: #37c1b8;
+}
+section.wrapper .setLevel .highLevel {
+    background: #ff4646;
 }
 section.wrapper .puzzle {
     width: 800px;
