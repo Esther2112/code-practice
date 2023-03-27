@@ -6,7 +6,7 @@
     css 개선
  */
 
-const originImage = ['minigameProject/image/0.png', 'minigameProject/image/1.png', 'minigameProject/image/2.png', 'minigameProject/image/3.png',
+    const originImage = ['minigameProject/image/0.png', 'minigameProject/image/1.png', 'minigameProject/image/2.png', 'minigameProject/image/3.png',
     'minigameProject/image/4.png', 'minigameProject/image/5.png',
     'minigameProject/image/6.png', 'minigameProject/image/7.png',
     'minigameProject/image/8.png', 'minigameProject/image/9.png',
@@ -22,7 +22,7 @@ function getImage() {
     const copyOfOrigin = [...originImage];
     //빈배열
     const mixedImage = [];
-
+    const $picture = document.querySelector('.puzzle');
     //이미지 섞어서 빈배열에 저장
     // function setImage() {
     orderedIndex = 0;
@@ -44,14 +44,15 @@ function getImage() {
         }
         //==================테스트용===========================================
 
-        const $setImage = document.querySelector(`#index${orderedIndex}`);
+        const $setImage = document.createElement('div');
+        $setImage.classList.add('mixedImage');
+        $setImage.id = `#index${orderedIndex}`;
         $setImage.style.background = `url(${mixedImage[orderedIndex]})`;
+        $picture.appendChild($setImage);
 
         orderedIndex++;
     }
 }
-
-
 
 //클릭가능 버튼 지정하기==========================================================
 function setMovePoint() {
