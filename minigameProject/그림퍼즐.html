@@ -7,19 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../common.css">
-    <link rel="stylesheet" href="../minigameProject/그림퍼즐.css">
+    <link rel="stylesheet" href="그림퍼즐.css">
+    
     <title>Document</title>
 </head>
 
 <body>
     <section class = "wrapper">
         <h1 class = "title">그림퍼즐게임</h1>
-        <div class="puzzle clearfix">
+        <div class="setLevel">
+            <a href="LEVEL_LOW.html" class="level lowLevel">쉬움</a>
+            <a href="LEVEL_MID.html" class="level midLevel">보통</a>
+            <a href="LEVEL_HIGH.html" class="level highLevel">어려움</a>
+        </div>
 
+        <div class="puzzle clearfix">
+            <h2 class = "subTitle"><span>레벨</span>을 선택해주세요</h2>
+            <div class="animationBox">
+                <div class="animationBlock block1"></div>
+                <div class="animationBlock block2"></div>
+                <div class="animationBlock block3"></div>
+            </div>
         </div>
     </section>
     
-    <script src="그림퍼즐 수정중.js"></script>
 </body>
 
 </html>
