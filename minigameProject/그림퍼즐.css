@@ -46,36 +46,87 @@ section.wrapper .setLevel .level {
 section.wrapper .setLevel .lowLevel {
     background: #f0dd31;
 }
+section.wrapper .setLevel .lowLevel:hover {
+    background: #ffcc00;
+}
 section.wrapper .setLevel .midLevel {
     background: #37c1b8;
 }
+section.wrapper .setLevel .midLevel:hover {
+    background: #20ada4;
+}
 section.wrapper .setLevel .highLevel {
     background: #ff4646;
+}
+section.wrapper .setLevel .highLevel:hover {
+    background: #e42c2c;
 }
 section.wrapper .puzzle {
     width: 500px;
     height: 500px;
     border-radius: 20px;
+    overflow: hidden;
+    background: #fdfff2;
     border: 5px solid rgb(110, 110, 110);
-    display: flex;
+    font-weight: 700;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 section.wrapper .puzzle .subTitle {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 200px;
     font-size: 30px;
     color: yellowgreen;
     /* border: 1px solid #000; */
 }
+
 section.wrapper .puzzle .subTitle span {
     font-size: 35px;
     color: #ff4646;
 }
 section.wrapper .puzzle .animationBox {
-    
+    display: flex;
+    justify-content: space-around;
+    height: 300px;
+    /* border: 1px solid #000; */
+    position: relative;
 }
 section.wrapper .puzzle .animationBox .animationBlock {
-
+    width: 100px;
+    height: 150px;
+    /* border: 1px solid red; */
+    position: absolute;
+    bottom: 0;
+}
+section.wrapper .puzzle .animationBox .block1 {
+    left: 50px;
+    background: #f0dd31;
+    animation: level1 1s infinite both;
+}
+@keyframes level1 {
+    0% { height: 50%;}
+    50% {height: 120%;}
+    100% {height: 50%;}
+}
+section.wrapper .puzzle .animationBox .block2 {
+    background: #37c1b8;
+    animation: level2 2s infinite both;
+}
+@keyframes level2 {
+    0% { height: 80%;}
+    50% {height: 20%;}
+    100% {height: 80%;}
+}
+section.wrapper .puzzle .animationBox .block3 {
+    right: 50px;
+    background: #ff4646;
+    animation: level3 2s infinite both;
+}
+@keyframes level3 {
+    0% { height: 30%;}
+    50% {height: 100%;}
+    100% {height: 30%;}
 }

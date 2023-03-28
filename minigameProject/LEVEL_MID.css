@@ -55,13 +55,22 @@ section.wrapper .setLevel .level {
     cursor: pointer;
 }
 section.wrapper .setLevel .lowLevel {
-    background: #f6e54e;
+    background: #f0dd31;
+}
+section.wrapper .setLevel .lowLevel:hover {
+    background: #ffcc00;
 }
 section.wrapper .setLevel .midLevel {
     background: #37c1b8;
 }
+section.wrapper .setLevel .midLevel:hover {
+    background: #20ada4;
+}
 section.wrapper .setLevel .highLevel {
     background: #ff4646;
+}
+section.wrapper .setLevel .highLevel:hover {
+    background: #e42c2c;
 }
 section.wrapper .puzzle {
     width: 500px;
