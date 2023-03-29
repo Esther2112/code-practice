@@ -1,5 +1,6 @@
 body {
     background: rgba(80, 156, 167, 0.562);
+    overflow: hidden;
 }
 body header {
     display: flex;
@@ -32,7 +33,7 @@ body header .gametitle .titleLine {
 }
 body header .gametitle .titleLine .break {
     color: rgba(255, 255, 255, 0.597);
-    font-size: 700px;
+    /* font-size: 700px; */
     width: fit-content;
     font-size: 90px;
     /* border: 1px solid #000; */
@@ -92,6 +93,31 @@ body header .gametitle .titleLine .break {
 .container .wrapper .gameLink .gameName4 {
     background: #bbbaff;
 }
-.teamMembers {
-    
+.endingCredit {
+    color: #ffffff99;
+    width: fit-content;
+    /* border: 5px solid #000; */
+    position: absolute;
+    right: 100px;
+    bottom: -100vh;
+    animation: endingCredit 15s linear normal infinite;
+}
+@keyframes endingCredit {
+    0% {transform: translateY(-100px)}
+    100% {transform: translateY(-1700px)}
+}
+.endingCredit .endingtitle {
+    width: fit-content;
+    font-weight: 700;
+    font-size: 14px;
+}
+.endingCredit .endingCreditdetail {
+    display: block;
+    width: 120px;
+    font-size: 12px;
+    /* border: 1px solid #000; */
+}
+.endingCredit .endingCreditdetail .endingCreditName {
+    position: absolute;
+    right: 0;
 }
