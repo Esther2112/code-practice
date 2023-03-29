@@ -32,7 +32,7 @@ body header .gametitle .titleLine {
     justify-content: center;
 }
 body header .gametitle .titleLine .break {
-    color: rgba(255, 255, 255, 0.597);
+    color: rgb(255, 255, 255, 0.7);
     /* font-size: 700px; */
     width: fit-content;
     font-size: 90px;
@@ -58,7 +58,7 @@ body header .gametitle .titleLine .break {
     height: 250px;
     float: left;
     margin: 10px;
-    border: 1px solid #ffffff;
+    border: 1px solid #ffffff77;
     overflow: hidden;
     border-radius: 20px;
     position: relative;
@@ -72,7 +72,7 @@ body header .gametitle .titleLine .break {
     width: 250px;
 }
 .container .wrapper .gameLink .gameName {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     position: absolute;
     bottom: 5px;
     right: 10px;
@@ -93,17 +93,33 @@ body header .gametitle .titleLine .break {
 .container .wrapper .gameLink .gameName4 {
     background: #bbbaff;
 }
+.container .madeby {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 15px;
+    color: rgb(255, 255, 255, 0.7);
+    cursor: pointer;
+}
+.container .madeby:hover .endingCredit{
+    display: block;
+}
 .endingCredit {
-    color: #ffffff99;
-    width: fit-content;
-    /* border: 5px solid #000; */
     position: absolute;
     right: 100px;
-    bottom: -100vh;
+    bottom: 0;
+}
+.endingCredit {
+    display: none;
+    color: rgb(255, 255, 255, 0.7);
+    width: fit-content;
+    /* border: 5px solid #000; */
     animation: endingCredit 15s linear normal infinite;
 }
 @keyframes endingCredit {
-    0% {transform: translateY(-100px)}
+    0% {
+        bottom: -100vh;
+        transform: translateY(-100px)}
     100% {transform: translateY(-1700px)}
 }
 .endingCredit .endingtitle {
