@@ -19,21 +19,21 @@ function getImage() {
     // function setImage() {
     orderedIndex = 0;
     while (mixedImage.length < 24) {
-        const mixedIndex = Math.floor(Math.random() * 25);
-        if (copyOfOrigin[mixedIndex] === null) {
-            continue;
-        } else {
-            mixedImage.push(copyOfOrigin[mixedIndex]);
-            copyOfOrigin[mixedIndex] = null;
-        }
-        //==================테스트용===========================================
-        // const mixedIndex = orderedIndex;
+        // const mixedIndex = Math.floor(Math.random() * 25);
         // if (copyOfOrigin[mixedIndex] === null) {
         //     continue;
         // } else {
         //     mixedImage.push(copyOfOrigin[mixedIndex]);
         //     copyOfOrigin[mixedIndex] = null;
         // }
+        //==================테스트용===========================================
+        const mixedIndex = orderedIndex;
+        if (copyOfOrigin[mixedIndex] === null) {
+            continue;
+        } else {
+            mixedImage.push(copyOfOrigin[mixedIndex]);
+            copyOfOrigin[mixedIndex] = null;
+        }
         //==================테스트용===========================================
 
         const $setImage = document.createElement('div');
@@ -92,7 +92,8 @@ function endOfGame() {
         }
     }
     
-    alert('끝!');
+    const $ending = document.querySelector('.ending');
+    $ending.style.display = 'block';
     return;
 }
 
