@@ -145,7 +145,7 @@ function endOfGame() {
     }
     
     const $ending = document.querySelector('.ending');
-    $ending.style.display = 'block';
+    $ending.style.display = 'flex';
     return;
 }
 

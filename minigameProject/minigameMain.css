@@ -1,0 +1,97 @@
+body {
+    background: rgba(80, 156, 167, 0.562);
+}
+body header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid #000; */
+}
+body header .gametitle {
+    width: 800px;
+    height: 180px;
+    /* border: 1px solid #000; */
+    padding: 20px 20px;
+}
+body header .gametitle .covid {
+    font-size: 30px;
+    display: block;
+    width: fit-content;
+    margin-left: 18%;
+    margin-top: 10px;
+    /* border: 1px solid #000x`; */
+    transform: rotate(-10deg);
+
+}
+body header .gametitle .blue {
+    color: rgb(2, 47, 132);
+}
+body header .gametitle .titleLine {
+    display: flex;
+    justify-content: center;
+}
+body header .gametitle .titleLine .break {
+    color: rgba(255, 255, 255, 0.597);
+    font-size: 700px;
+    width: fit-content;
+    font-size: 90px;
+    /* border: 1px solid #000; */
+    margin: 0 auto;
+}
+
+.container {
+    margin: 0 auto;
+    width: 800px;
+    /* border: 1px solid #000; */
+    display: flex;
+    justify-content: center;
+}
+.container .wrapper {
+    width: fit-content;
+    padding: 10px;
+    /* border: 1px solid #000; */
+}
+.container .wrapper .gameLink {
+    display: block;
+    width: 250px;
+    height: 250px;
+    float: left;
+    margin: 10px;
+    border: 1px solid #ffffff;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+}
+.container .wrapper .gameLink:nth-child(3){
+    content: '';
+    clear: both;
+    display: block;
+}
+.container .wrapper .gameLink .gameVideo {
+    width: 250px;
+}
+.container .wrapper .gameLink .gameName {
+    color: #ffffff;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    z-index: 9999;
+    padding: 5px 15px;
+    /* border: 1px solid #000; */
+    border-radius: 20px;
+}
+.container .wrapper .gameLink .gameName1 {
+    background: #bbbaff;
+}
+.container .wrapper .gameLink .gameName2 {
+    background: #bbbaff;
+}
+.container .wrapper .gameLink .gameName3 {
+    background: #bbbaff;
+}
+.container .wrapper .gameLink .gameName4 {
+    background: #bbbaff;
+}
+.teamMembers {
+    
+}
