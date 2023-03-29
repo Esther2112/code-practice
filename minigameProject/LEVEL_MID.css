@@ -89,6 +89,8 @@ section.wrapper .midLevelGame .mixedImage {
     float: left;
     overflow: hidden;
     opacity: 0.8;
+    border: 1px dashed #ffffff;
+    
 }
 section.wrapper .midLevelGame .mixedImage:hover {
     opacity: 1;

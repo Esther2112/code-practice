@@ -77,6 +77,24 @@ section.wrapper .highLevelGame .mixedImage {
     height: 20%;
     float: left;
     opacity: 0.8;
+    border: 1px dashed #ffffff;
+    /* animation: highMode1 1s infinite both; */
+}
+section.wrapper .highLevelGame .mixedImage:nth-child(2n + 1){
+    animation: highMode1 1s infinite both;
+}
+@keyframes highMode1 {
+    0% {border-radius: 10%;}
+    50% {border-radius: 50%;}
+    100% {border-radius: 10%;}    
+}
+section.wrapper .highLevelGame .mixedImage:nth-child(2n){
+    animation: highMode2 1s infinite both;
+}
+@keyframes highMode2 {
+    0% {border-radius: 50%;}
+    50% {border-radius: 10%;}
+    100% {border-radius: 50%;}    
 }
 section.wrapper .highLevelGame .mixedImage:hover {
     opacity: 1;

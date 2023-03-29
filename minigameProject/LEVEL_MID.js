@@ -71,21 +71,21 @@ function getImage() {
     // function setImage() {
     orderedIndex = 0;
     while (mixedImage.length < 15) {
-        // const mixedIndex = Math.floor(Math.random() * 16);
-        // if (copyOfOrigin[mixedIndex] === null) {
-        //     continue;
-        // } else {
-        //     mixedImage.push(copyOfOrigin[mixedIndex]);
-        //     copyOfOrigin[mixedIndex] = null;
-        // }
-        //==================테스트용===========================================
-        const mixedIndex = orderedIndex;
+        const mixedIndex = Math.floor(Math.random() * 16);
         if (copyOfOrigin[mixedIndex] === null) {
             continue;
         } else {
             mixedImage.push(copyOfOrigin[mixedIndex]);
             copyOfOrigin[mixedIndex] = null;
         }
+        //==================테스트용===========================================
+        // const mixedIndex = orderedIndex;
+        // if (copyOfOrigin[mixedIndex] === null) {
+        //     continue;
+        // } else {
+        //     mixedImage.push(copyOfOrigin[mixedIndex]);
+        //     copyOfOrigin[mixedIndex] = null;
+        // }
         //==================테스트용===========================================
 
         const $setImage = document.createElement('div');

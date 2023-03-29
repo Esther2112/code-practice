@@ -17,7 +17,6 @@ section.wrapper h1.title {
     height: 150px;
     /* animation: title 2s infinite both; */
 }
-
 section.wrapper .setLevel{
     width: 500px;
     display: flex;
@@ -72,6 +71,23 @@ section.wrapper .lowLevelGame .mixedImage {
     float: left;
     display: flex;
     opacity: 0.8;
+    /* border: 6px dashed #ffffff; */
+}
+section.wrapper .lowLevelGame .mixedImage:nth-child(2n + 1) {
+    animation: easyMode1 1s infinite both;
+}
+@keyframes easyMode1 {
+    0% {border-radius: 10%;}
+    50% {border-radius: 50%;}
+    100% {border-radius: 10%;}    
+}
+section.wrapper .lowLevelGame .mixedImage:nth-child(2n) {
+    animation: easyMode2 1s infinite both;
+}
+@keyframes easyMode2 {
+    0% {border-radius: 50%;}
+    50% {border-radius: 10%;}
+    100% {border-radius: 50%;}    
 }
 section.wrapper .lowLevelGame .mixedImage:hover {
     opacity: 1;

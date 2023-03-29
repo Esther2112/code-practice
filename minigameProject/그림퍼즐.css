@@ -17,13 +17,13 @@ section.wrapper h1.title {
     height: 150px;
     /* animation: title 2s infinite both; */
 }
-/* @keyframes title {
+@keyframes title {
     0% {font-size: 50px;}
     25% {font-size: 55px;}
     50% {font-size: 50px;}
     75% {font-size: 55px;}
     100% {font-size: 50px;}
-} */
+}
 section.wrapper .setLevel{
     width: 500px;
     display: flex;
