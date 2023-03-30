@@ -44,10 +44,13 @@ function getImage() {
     const $puzzle = document.querySelector('.lowLevelGame').children;
     const arrayOfPics = [...$puzzle];
     let temp;
-    while (shuffleCount < 1000) {
+    while (true) {
         const $blank = document.querySelector('#blank');
         let movePoint = arrayOfPics.indexOf($blank);
         let direction = Math.floor(Math.random() * 4);
+        if(shuffleCount > 999 && movePoint === arrayOfPics.length - 1){
+            break;
+        }
         switch (direction) {
             case UP:
                 if (Math.floor(movePoint / 3) === 0) {
