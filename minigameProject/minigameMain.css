@@ -2,6 +2,7 @@ body {
     background: rgba(80, 156, 167, 0.562);
     overflow: hidden;
 }
+
 body header {
     display: flex;
     justify-content: center;
@@ -41,6 +42,10 @@ body header .gametitle .titleLine .break {
 }
 
 .container {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
     margin: 0 auto;
     width: 800px;
     /* border: 1px solid #000; */
@@ -108,13 +113,14 @@ body header .gametitle .titleLine .break {
     position: absolute;
     right: 100px;
     bottom: 0;
+    /* border: 1px solid #000; */
 }
 .endingCredit {
     display: none;
     color: rgb(255, 255, 255, 0.7);
     width: fit-content;
     /* border: 5px solid #000; */
-    animation: endingCredit 15s linear normal infinite;
+    /* animation: endingCredit 15s linear normal infinite; */
 }
 @keyframes endingCredit {
     0% {

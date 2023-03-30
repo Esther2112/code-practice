@@ -68,38 +68,98 @@ function getImage() {
     const mixedImage = [];
     const $picture = document.querySelector('.midLevelGame');
     //이미지 섞어서 빈배열에 저장
-    // function setImage() {
-    orderedIndex = 0;
-    while (mixedImage.length < 15) {
-        // const mixedIndex = Math.floor(Math.random() * 16);
-        // if (copyOfOrigin[mixedIndex] === null) {
-        //     continue;
-        // } else {
-        //     mixedImage.push(copyOfOrigin[mixedIndex]);
-        //     copyOfOrigin[mixedIndex] = null;
-        // }
-        //==================테스트용===========================================
-        const mixedIndex = orderedIndex;
-        if (copyOfOrigin[mixedIndex] === null) {
-            continue;
-        } else {
-            mixedImage.push(copyOfOrigin[mixedIndex]);
-            copyOfOrigin[mixedIndex] = null;
-        }
-        //==================테스트용===========================================
 
+    //mixImage에 순차적으로 이미지 넣기
+    for (let i = 0; i < copyOfOrigin.length; i++) {
+        mixedImage.push(copyOfOrigin[i]);
+    }
+
+    let orderedIndex = 0;
+    while (true) {
         const $setImage = document.createElement('div');
         $setImage.classList.add('mixedImage');
         $setImage.id = `index${orderedIndex}`;
+        if (orderedIndex === mixedImage.length - 1) {
+            $setImage.id = `blank`;
+            $picture.appendChild($setImage);
+            break;
+        }
         $setImage.style.background = `url(${mixedImage[orderedIndex]})`;
         $picture.appendChild($setImage);
 
         orderedIndex++;
     }
-    const $setImage = document.createElement('div');
-    $setImage.classList.add('mixedImage');
-    $setImage.id = `blank`;
-    $picture.appendChild($setImage);
+
+    //blank가 돌아다니면서 그림 섞기 
+    const UP = 0;
+    const LEFT = 1;
+    const RIGHT = 2;
+    const DOWN = 3;
+    let shuffleCount = 0;
+
+    const $puzzle = document.querySelector('.midLevelGame').children;
+    const arrayOfPics = [...$puzzle];
+    let temp;
+    while (shuffleCount < 1000) {
+        const $blank = document.querySelector('#blank');
+        let movePoint = arrayOfPics.indexOf($blank);
+        let direction = Math.floor(Math.random() * 4);
+        switch (direction) {
+            case UP:
+                if (Math.floor(movePoint / 4) === 0) {
+                    break;
+                }
+                const targetUp = arrayOfPics[movePoint - 3];
+                $blank.style.background = targetUp.style.background;
+                targetUp.style.background = null;
+                temp = targetUp.id;
+                targetUp.id = $blank.id;
+                $blank.id = temp;
+                break;
+
+            case LEFT:
+                if (movePoint % 4 === 0) {
+                    break;
+                }
+                const targetLeft = arrayOfPics[movePoint - 1];
+                $blank.style.background = targetLeft.style.background;
+                targetLeft.style.background = null;
+
+                temp = targetLeft.id;
+                targetLeft.id = $blank.id;
+                $blank.id = temp;
+                break;
+
+            case RIGHT:
+                if (movePoint % 4 === 3) {
+                    break;
+                }
+                const targetRight = arrayOfPics[movePoint + 1];
+                $blank.style.background = targetRight.style.background;
+                targetRight.style.background = null;
+
+                temp = targetRight.id;
+                targetRight.id = $blank.id;
+                $blank.id = temp;
+                break;
+
+            case DOWN:
+                if (Math.floor(movePoint / 4) === 3) {
+                    break;
+                }
+                const targetDown = arrayOfPics[movePoint + 3];
+                $blank.style.background = targetDown.style.background;
+                targetDown.style.background = null;
+
+                temp = targetDown.id;
+                targetDown.id = $blank.id;
+                $blank.id = temp;
+                break;
+
+        }
+        shuffleCount++;
+    }
+
 }
 
 //클릭가능 버튼 지정하기==========================================================
