@@ -9,12 +9,14 @@ body header {
     align-items: center;
     /* border: 1px solid #000; */
 }
+
 body header .gametitle {
     width: 800px;
     height: 180px;
     /* border: 1px solid #000; */
     padding: 20px 20px;
 }
+
 body header .gametitle .covid {
     font-size: 30px;
     display: block;
@@ -25,13 +27,16 @@ body header .gametitle .covid {
     transform: rotate(-10deg);
 
 }
+
 body header .gametitle .blue {
     color: rgb(2, 47, 132);
 }
+
 body header .gametitle .titleLine {
     display: flex;
     justify-content: center;
 }
+
 body header .gametitle .titleLine .break {
     color: rgb(255, 255, 255, 0.7);
     /* font-size: 700px; */
@@ -52,11 +57,13 @@ body header .gametitle .titleLine .break {
     display: flex;
     justify-content: center;
 }
+
 .container .wrapper {
     width: fit-content;
     padding: 10px;
     /* border: 1px solid #000; */
 }
+
 .container .wrapper .gameLink {
     display: block;
     width: 250px;
@@ -68,14 +75,17 @@ body header .gametitle .titleLine .break {
     border-radius: 20px;
     position: relative;
 }
-.container .wrapper .gameLink:nth-child(3){
+
+.container .wrapper .gameLink:nth-child(3) {
     content: '';
     clear: both;
     display: block;
 }
+
 .container .wrapper .gameLink .gameVideo {
     width: 250px;
 }
+
 .container .wrapper .gameLink .gameName {
     color: rgb(255, 255, 255);
     position: absolute;
@@ -86,18 +96,23 @@ body header .gametitle .titleLine .break {
     /* border: 1px solid #000; */
     border-radius: 20px;
 }
+
 .container .wrapper .gameLink .gameName1 {
     background: #bbbaff;
 }
+
 .container .wrapper .gameLink .gameName2 {
     background: #bbbaff;
 }
+
 .container .wrapper .gameLink .gameName3 {
     background: #bbbaff;
 }
+
 .container .wrapper .gameLink .gameName4 {
     background: #bbbaff;
 }
+
 .container .madeby {
     position: absolute;
     right: 10px;
@@ -106,40 +121,97 @@ body header .gametitle .titleLine .break {
     color: rgb(255, 255, 255, 0.7);
     cursor: pointer;
 }
-.container .madeby:hover .endingCredit{
+
+.container .madeby:hover .endingCredit {
     display: block;
 }
+
 .endingCredit {
     position: absolute;
     right: 100px;
     bottom: 0;
     /* border: 1px solid #000; */
 }
+
 .endingCredit {
     display: none;
-    color: rgb(255, 255, 255, 0.7);
     width: fit-content;
     /* border: 5px solid #000; */
     /* animation: endingCredit 15s linear normal infinite; */
 }
+
 @keyframes endingCredit {
     0% {
         bottom: -100vh;
-        transform: translateY(-100px)}
-    100% {transform: translateY(-1700px)}
+        transform: translateY(-100px)
+    }
+
+    100% {
+        transform: translateY(-1700px)
+    }
 }
+
 .endingCredit .endingtitle {
     width: fit-content;
     font-weight: 700;
     font-size: 14px;
 }
+
 .endingCredit .endingCreditdetail {
     display: block;
     width: 120px;
     font-size: 12px;
     /* border: 1px solid #000; */
 }
+
 .endingCredit .endingCreditdetail .endingCreditName {
     position: absolute;
     right: 0;
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        min-width: 260px;
+        overflow: auto;
+    }
+    body header .gametitle {
+        width: 100%;
+        height: 150px;
+    }
+    body header .gametitle .covid {
+        font-size: 20px;
+        display: block;
+        width: fit-content;
+        margin-left: 10%;
+        margin-top: 10px;
+        /* border: 1px solid #000x`; */
+        transform: rotate(-10deg);
+    
+    }
+    body header .gametitle .titleLine .break {
+        color: rgb(255, 255, 255, 0.7);
+        width: fit-content;
+        font-size: 70px;
+        border: 1px solid #000;
+        margin: 0 auto;
+    }
+    .container {
+        width: 100%;
+        /* display: flex; */
+        /* justify-content: center; */
+        /* border: 1px solid #000; */
+    }
+    .container .wrapper {
+        width: 250px;
+        padding: 0;
+    }
+    .container .wrapper .gameLink {
+        margin: 0 auto 20px;
+    }
+    .container .wrapper .lastone {
+        margin-bottom: 50px;
+    }
+    .container .madeby {
+        display: none;
+    }
 }
