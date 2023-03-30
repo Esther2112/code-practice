@@ -34,40 +34,102 @@ function getImage() {
         orderedIndex++;
     }
 
-    //blank가 돌아다니면서 그림 섞기
+    //blank가 돌아다니면서 그림 섞기 --- 6, 8 사라짐
     const UP = 0;
     const LEFT = 1;
     const RIGHT = 2;
     const DOWN = 3;
     let shuffleCount = 0;
-    
+
     const $puzzle = document.querySelector('.lowLevelGame').children;
     const arrayOfPics = [...$puzzle];
-    const $blank = document.querySelector('#blank');
-    
-    let movePoint = arrayOfPics.indexOf($blank);
-    //while(){
-    let direction = Math.floor(Math.random()*4);
-    switch(direction){
-        case UP:
-            const targetUp = arrayOfPics[movePoint - 3];
-        case LEFT:
-            const targetLeft = arrayOfPics[movePoint - 1];
-        case RIGHT:
-            const targetRight = arrayOfPics[movePoint + 1];
-        case DOWN:
-            const targetDown = arrayOfPics[movePoint + 3];
+    let temp;
+    while (shuffleCount < 1000) {
+        const $blank = document.querySelector('#blank');
+        let movePoint = arrayOfPics.indexOf($blank);
+        let direction = Math.floor(Math.random() * 4);
+        // let direction = 0;
+        console.log(direction);
+        switch (direction) {
+            case UP:
+                if (Math.floor(movePoint / 3) === 0) {
+                    console.log('제일윗줄');
+                    break;
+                }
+                console.log('제일윗줄아님');
+                const targetUp = arrayOfPics[movePoint - 3];
+                console.log(arrayOfPics.indexOf(targetUp));
+                console.log($blank.style.background);
+                console.log(targetUp.style.background);
+                $blank.style.background = targetUp.style.background;
+                targetUp.style.background = null;
+                console.log('정상동작');
+                console.log($blank.style.background);
+                console.log(targetUp.style.background);
+                temp = targetUp.id;
+                targetUp.id = $blank.id;
+                $blank.id = temp;
+                console.log(targetUp.id);
+                break;
+
+            case LEFT:
+                if (movePoint % 3 === 0) {
+                    console.log('제일왼쪽');
+                    break;
+                }
+                console.log('제일왼쪽아님');
+                const targetLeft = arrayOfPics[movePoint - 1];
+                $blank.style.background = targetLeft.style.background;
+                targetLeft.style.background = null;
+
+                temp = targetLeft.id;
+                console.log(targetLeft.id);
+                targetLeft.id = $blank.id;
+                $blank.id = temp;
+                break;
+
+            case RIGHT:
+                if (movePoint % 3 === 2) {
+                    console.log('제일오른쪽');
+                    break;
+                }
+                console.log('제일오른쪽아님');
+                const targetRight = arrayOfPics[movePoint + 1];
+                $blank.style.background = targetRight.style.background;
+                targetRight.style.background = null;
+
+                temp = targetRight.id;
+                console.log(targetRight.id);
+                targetRight.id = $blank.id;
+                $blank.id = temp;
+                break;
+
+            case DOWN:
+                if (Math.floor(movePoint / 3) === 2) {
+                    console.log('제일아랫줄');
+                    break;
+                }
+                console.log('제일아랫줄아님');
+                const targetDown = arrayOfPics[movePoint + 3];
+                $blank.style.background = targetDown.style.background;
+                targetDown.style.background = null;
+
+                temp = targetDown.id;
+                console.log(targetDown.id);
+                targetDown.id = $blank.id;
+                $blank.id = temp;
+                break;
+
+        }
+        shuffleCount++;
+        // console.log(arrayOfPics[8].id);
+        // console.log($blank.id);
+
     }
 
-    //}
-
-
-
-
-
-
-
 }
+
+
 // function getImage() {
 //     //이미지 준비============================================================================
 //     //원본 이미지 소스 배열 4 x 4
